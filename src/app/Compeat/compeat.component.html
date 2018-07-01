@@ -1,0 +1,33 @@
+
+
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+
+
+
+  <div class="row">
+    <div class="col-">
+      <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action" *ngFor="let user of users" (click)="onSelect(user)">
+          {{user.name}}
+        </button>
+      </div>
+
+    </div>
+    <div class="col-sm">
+      <div *ngFor="let post of posts" class="card">
+        <div class="card-body">
+            <button type="button" class="btn btn-default" (click)="openDialog()">{{selectedUser.name}}</button>
+
+            <h5 class="card-text text">{{post.title}}</h5>
+          <p class="card-text">{{post.body}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
