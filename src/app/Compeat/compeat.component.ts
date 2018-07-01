@@ -28,7 +28,6 @@ export class CompeatComponent implements OnInit {
       .get('https://jsonplaceholder.typicode.com/users')
       .subscribe(data => {
         this.users = data;
-        console.log(data);
       });
   }
   onSelect(user: User): void {
@@ -41,18 +40,15 @@ export class CompeatComponent implements OnInit {
         this.posts = data;
         console.log(this.usersPost);
       });
-    console.log(user);
   }
 
   openDialog() {
-    console.log('here');
     const dialogRef = this.dialog.open(MyDialogComponent, {
       width: '600px' ,
       data: this.selectedUser
     });
 
     dialogRef.afterClosed().subscribe(result => {
-        console.log('Dialog closed: ${result}');
         this.dialogResult = result;
     }
 

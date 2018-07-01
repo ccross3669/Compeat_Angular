@@ -8,12 +8,11 @@ import { MAT_DIALOG_DATA } from '@angular/material';
 })
 export class MyDialogComponent implements OnInit {
 
-  constructor(public thisDialogRef: MatDialogRef<MyDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: string) { }
+  constructor(public thisDialogRef: MatDialogRef<MyDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
   }
   onCloseConfirm() {
-    console.log('theress..s');
     this.thisDialogRef.close('Confirm');
   }
 
