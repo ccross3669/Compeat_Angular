@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   userSelected = '';
 
   receiveMessage($event) {
-    console.log($event);
     this.userSelected = $event;
   }
   ngAfterViewInit() {
@@ -36,7 +35,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.userSelected = this.child.selectedUser;
-    console.log(this.child.selectedUser);
+
     this.userService.isAuthenticated.subscribe(
       (authenticated) => {
         this.isAuthenticated = authenticated;
